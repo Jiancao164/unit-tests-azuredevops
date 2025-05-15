@@ -13,7 +13,11 @@ stages:
       - job:
         displayName: build job
         steps:
-
+          - task: UseDotNet@2
+            displayName: Use .NET6 to build
+            inputs:
+              version: '6.0.x'
+              includePreviewVersions: true
           - task: DotNetCoreCLI@2
             displayName: Building Visual studio solution
             inputs:
